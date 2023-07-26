@@ -47,8 +47,3 @@ My name is Tyler McLaughlin and I'm a PhD-trained scientist living in San Franci
 
   {% endfor %}
 </ul>
-
-
-
-
-[md](slides/slide1.md)

@@ -1,19 +1,19 @@
-function togglemenu() {
+// function togglemenu() {
 
-    var x = document.getElementById("nav");
+//     var x = document.getElementById("nav");
 
-    if (x.className === "nav") {
+//     if (x.className === "nav") {
 
-      x.className += " nav--open";
+//       x.className += " nav--open";
 
-    } else {
+//     } else {
 
-      x.className = "nav";
+//       x.className = "nav";
 
-    }
+//     }
 
-    var element = document.getElementById("menu-toggle");
+//     var element = document.getElementById("menu-toggle");
 
-    element.classList.toggle("menu-toggle--open");
+//     element.classList.toggle("menu-toggle--open");
 
-  }
+//   }

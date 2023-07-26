@@ -1,4 +1,4 @@
-/* For best practice, move CSS below to an external CSS file. */
+/* For best practice, move CSS below to an external CSS file.
 
 .nav {
 
@@ -72,4 +72,4 @@
 
 .menu-toggle--open .menu-toggle__bar3 {
 
-  transform: translate(0, -7px) rotate(45deg); }
+  transform: translate(0, -7px) rotate(45deg); } */
