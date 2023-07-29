@@ -27,60 +27,12 @@ navigable: false
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 
-# Argricultural Carbon Dioxide Emissions 
+# Agricultural Carbon Dioxide Emissions 
 
 
 My name is Tyler McLaughlin and I'm a PhD-trained scientist living in San Francisco, CA.  I am currently working at [AbbVie biopharmaceuticals](https://www.abbvie.com/), doing a postdoc in Computational Immuno-Oncology.  My scientific career began with computational systems biology research in Pittsburgh, PA and Farmington, CT.  I had a math and molecular biology double major in undergrad and so this focus felt natural.  Continuing in this scientific direction, during my PhD in Systems, Synthetic, and Physical Biology at Rice University in Houston, TX, my research involved human cell biophysics and systems biology, conducting both wet lab experiments and extensive amounts of image-based and statistical data analysis.   After that I was a Health Data Science Fellow at [Insight Data Science](https://www.insighthealthdata.com) in Silicon Valley during the Fall 2018 session where I did a project involving deep learning and brain waves.  You can learn more about me [here on LinkedIn](www.linkedin.com/in/r-tyler-mclaughlin-phd).
 
-<!-- <script src="scripts/index_graph.js"></script> -->
-<script>
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-var svg = d3.select("#d3div")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-//Read the data
-d3.csv("data/total_emissions_by_year.csv",
-
-    // Now I can use this dataset:
-  function(data) {
-
-    var x = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return d.Year; }))
-      .range([ 0, width ]);
-    svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-    // Add Y axis
-    var y = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return +d.total_emission; })])
-      .range([ height, 0 ]);
-    svg.append("g")
-      .call(d3.axisLeft(y));
-
-    // Add the line
-    svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 1.5)
-      .attr("d", d3.line()
-        .x(function(d) { return x(d.Year) })
-        .y(function(d) { return y(d.total_emission) })
-        )
-
-})
-</script>
+<script src="scripts/index_graph.js"></script>
 
 # Posts
 

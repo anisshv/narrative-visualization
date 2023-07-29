@@ -78,7 +78,7 @@ var svg = d3.select("#d3div")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.json("../data/total_emissions_by_year_v2.json",
+d3.csv("data/total_emissions_by_year.csv",
 
     // Now I can use this dataset:
   function(data) {
