@@ -83,8 +83,8 @@ d3.csv("data/total_emissions_by_year.csv",
       .append('rect')
       .style("fill", "none")
       .style("pointer-events", "all")
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
+      .attr('width', width)
+      .attr('height', height)
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
       .on('mouseout', mouseout);
@@ -105,8 +105,8 @@ d3.csv("data/total_emissions_by_year.csv",
         .attr("cy", y(selectedData.total_emission))
       focusText
         .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
-        .attr("Year", x(selectedData.Year))
-        .attr("Emissions", y(selectedData.total_emission))
+        .attr("Year", x(selectedData.Year)+150)
+        .attr("Emissions", y(selectedData.total_emission)+150)
       }
     
     function mouseout() {
