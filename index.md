@@ -40,23 +40,8 @@ To start, the graph above shows the overall global trend in emissions for the ag
 
 <script src="scripts/index_graph.js"></script>
 
-# Posts
-
-<ul style="padding-left:0px;">
-  {% for post in site.categories.blog %}
-
-      <h2>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-
-      <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <p>{{ post.content | strip_html | truncatewords:75}}</p>
-      <a href="{{ post.url | prepend: site.baseurl }}">Read more...</a><br>
-
-  {% endfor %}
-</ul>
 
 
 
 
-[md](slides/slide1.md)
+[Next Slide](slides/slide1.md)

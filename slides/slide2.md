@@ -42,5 +42,4 @@ To start, the graph above shows the overall global trend in emissions for the ag
 
 
 
-[Previous Slide](../index.md)
-[Next Slide](slide2.md)
+[Previous Slide](slide1.md)
