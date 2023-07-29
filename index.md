@@ -28,7 +28,15 @@ navigable: false
 # Agricultural Carbon Dioxide Emissions 
 
 
-My name is Tyler McLaughlin and I'm a PhD-trained scientist living in San Francisco, CA.  I am currently working at [AbbVie biopharmaceuticals](https://www.abbvie.com/), doing a postdoc in Computational Immuno-Oncology.  My scientific career began with computational systems biology research in Pittsburgh, PA and Farmington, CT.  I had a math and molecular biology double major in undergrad and so this focus felt natural.  Continuing in this scientific direction, during my PhD in Systems, Synthetic, and Physical Biology at Rice University in Houston, TX, my research involved human cell biophysics and systems biology, conducting both wet lab experiments and extensive amounts of image-based and statistical data analysis.   After that I was a Health Data Science Fellow at [Insight Data Science](https://www.insighthealthdata.com) in Silicon Valley during the Fall 2018 session where I did a project involving deep learning and brain waves.  You can learn more about me [here on LinkedIn](www.linkedin.com/in/r-tyler-mclaughlin-phd).
+The graph you see above, as well as the graphs you will see were constructed using data from the Food and Agriculture Organization (FAO) and the Intergovernmental Panel on Climate Change (IPCC). As you might have guessed, this data describes Carbon Dioxide emissions related to agri-food, which constitutes approximately ~62% of the global annual emissions. Given the agricultural sector's significant contribution to climate change, we can break down which areas tend to produce the most emissions. This breakdown can be examined by country, and by agricultural industry.
+
+
+
+The environmental impact of agriculture is often underestimated by the layperson. Mass media often highlight the impact of consumerism on climate change, but this is usually in context to individual practices (such as recycling or driving a car). As we will see, a significant portion of global emissions is actually controlled by industry - in this case: agriculture. Understanding and addressing the environmental impact of the agri-food industry is crucial for mitigating climate change and developing sustainable practices within this sector.
+
+
+
+To start, the graph above shows the overall global trend in emissions for the agricultural industry. In this plot, emissions (y axis) are plotted against year (x axis), where emissions are recorded in kilotons of CO2.
 
 <script src="scripts/index_graph.js"></script>
 
