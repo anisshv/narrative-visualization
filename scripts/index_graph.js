@@ -52,20 +52,20 @@ d3.csv("data/total_emissions_by_year.csv",
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle")
     
-    // Add X axis label:
-    svg.append("text")
-      .attr("text-anchor", "end")
-      .attr("x", width-30)
-      .attr("y", height + margin.top + 20)
-      .text("Year");
+    // // Add X axis label:
+    // svg.append("text")
+    //   .attr("text-anchor", "end")
+    //   .attr("x", width-30)
+    //   .attr("y", height + margin.top + 20)
+    //   .text("Year");
 
-    // Y axis label:
-    svg.append("text")
-      .attr("text-anchor", "end")
-      .attr("transform", "rotate(-90)")
-      .attr("y", -margin.left)
-      .attr("x", -margin.top)
-      .text("Total global emissions")
+    // // Y axis label:
+    // svg.append("text")
+    //   .attr("text-anchor", "end")
+    //   .attr("transform", "rotate(-90)")
+    //   .attr("y", -margin.left)
+    //   .attr("x", -margin.top)
+    //   .text("Total global emissions")
 
     // Add the line
     svg.append("path")
@@ -105,7 +105,7 @@ d3.csv("data/total_emissions_by_year.csv",
         .attr("cy", y(selectedData.total_emission))
       focusText
         .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
-        .attr("Year", x(selectedData.Year)+15)
+        .attr("Year", x(selectedData.Year)+150)
         .attr("Emissions", y(selectedData.total_emission))
       }
     
