@@ -20,8 +20,6 @@ navigable: false
 
 <script src="https://d3js.org/d3.v4.js"></script>
 
-<select id="selectButton"></select>
-
 <div id='d3div'></div>
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
