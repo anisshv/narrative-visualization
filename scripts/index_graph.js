@@ -101,12 +101,12 @@ d3.csv("data/total_emissions_by_year.csv",
       var i = bisect(data, x0, 1);
       selectedData = data[i]
       focus
-        .attr("cx", x(selectedData.x))
-        .attr("cy", y(selectedData.y))
+        .attr("cx", x(selectedData.Year))
+        .attr("cy", y(selectedData.total_emission))
       focusText
-        .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
-        .attr("x", x(selectedData.x)+15)
-        .attr("y", y(selectedData.y))
+        .html("x:" + selectedData.Year + "  -  " + "y:" + selectedData.total_emission)
+        .attr("x", x(selectedData.Year)+15)
+        .attr("y", y(selectedData.total_emission))
       }
     
     function mouseout() {
