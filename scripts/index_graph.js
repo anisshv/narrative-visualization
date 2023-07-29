@@ -25,8 +25,6 @@ d3.csv("data/total_emissions_by_year.csv",
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-    var xAxis = d3.svg.axis().scale(x).orient("bottom").tickFormat(d3.format("d"));
-
     // Add Y axis
     var y = d3.scaleLinear()
       .domain([10000000, d3.max(data, function(d) { return +d.total_emission; })])
