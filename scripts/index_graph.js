@@ -104,7 +104,6 @@ d3.csv("data/total_emissions_by_year.csv",
         .attr("cx", x(selectedData.Year))
         .attr("cy", y(selectedData.total_emission))
       focusText
-        // .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
         .html(selectedData.total_emission + " kilotons of CO2 in " + selectedData.Year)
         .attr("x", x(selectedData.Year))
         .attr("y", y(selectedData.total_emission))
