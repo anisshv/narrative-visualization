@@ -103,10 +103,10 @@ d3.csv("data/total_emissions_by_year.csv",
       focus
         .attr("cx", x(selectedData.Year))
         .attr("cy", y(selectedData.total_emission))
-      // focusText
-        // .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
-        // .attr("Year", x(selectedData.Year))
-        // .attr("Emissions", y(selectedData.total_emission))
+      focusText
+        .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
+        .attr("cx", x(selectedData.Year))
+        .attr("cy", y(selectedData.total_emission))
     }
     
     function mouseout() {
