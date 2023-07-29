@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 760 - margin.left - margin.right,
+    width = 720 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -27,7 +27,7 @@ d3.csv("data/total_emissions_by_year.csv",
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([6000000, d3.max(data, function(d) { return +d.total_emission; })])
+      .domain([10000000, d3.max(data, function(d) { return +d.total_emission; })])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
@@ -56,14 +56,14 @@ d3.csv("data/total_emissions_by_year.csv",
     svg.append("text")
       .attr("text-anchor", "end")
       .attr("x", width-30)
-      .attr("y", height + margin.top + 20)
+      .attr("y", height + margin.top + 200)
       .text("Year");
 
     // Y axis label:
     svg.append("text")
       .attr("text-anchor", "end")
       .attr("transform", "rotate(-90)")
-      .attr("y", -margin.left+20)
+      .attr("y", -margin.left+200)
       .attr("x", -margin.top)
       .text("Total global emissions")
 
