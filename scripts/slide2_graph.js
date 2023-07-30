@@ -222,16 +222,16 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
         d.Emissions = +d.Emissions;
       });
 
-      // X axis
+      // Y axis
       y.domain(dataFilter.map(function(d) { return d.Type; }))
       yAxis.transition().duration(1000).call(d3.axisLeft(y))
 
-      // Add Y axis
+      // Add X axis
       x.domain([0, d3.max(dataFilter, function(d) { return d.Emissions }) ]);
       xAxis.transition().duration(1000).call(d3.axisBottom(x))
-      .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
+        .selectAll("text")
+          .attr("transform", "translate(-10,0)rotate(-45)")
+          .style("text-anchor", "end");
 
       var u = svg.selectAll("rect")
       .data(dataFilter)
