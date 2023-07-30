@@ -70,8 +70,8 @@ d3.csv("../data/avg_emissions_by_type.csv",
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle")
         .html("6018")
-        .attr("x", margin.top + 500)
-        .attr("y", margin.left + 115)
+        .attr("x", margin.top + 400)
+        .attr("y", margin.left + 95)
     
     // // Add X axis label:
     // svg.append("text")
