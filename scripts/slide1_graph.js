@@ -34,7 +34,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .domain(data.map(function(d) { return d.Type; }))
       .padding(.1);
     svg.append("g")
-      .call(d3.axisLeft(y))
+      .call(d3.axisLeft(y));
     
     //Bars
     svg.selectAll("rect")
@@ -45,7 +45,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .attr("y", function(d) { return y(d.Type); })
       .attr("width", function(d) { return x(d.Emissions); })
       .attr("height", y.bandwidth() )
-      .attr("fill", "#69b3a2")
+      .attr("fill", "#69b3a2");
 
     // This allows to find the closest X index of the mouse:
     // var bisect = d3.bisector(function(d) { return d.Year; }).left;
