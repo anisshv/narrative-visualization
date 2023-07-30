@@ -25,8 +25,8 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
       .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+        .attr("transform", "translate(-10,0)rotate(-45)")
+        .style("text-anchor", "end");
 
     // Add Y axis
     var y = d3.scaleBand()
