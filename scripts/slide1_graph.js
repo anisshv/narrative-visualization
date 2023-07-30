@@ -20,7 +20,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
 
     var x = d3.scaleLinear()
       // .domain(d3.extent(data, function(d) { return d.Emissions; }))
-      .domain([0, 10000])
+      .domain([0, 8000])
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -62,13 +62,16 @@ d3.csv("../data/avg_emissions_by_type.csv",
     //     .attr('r', 8.5)
     //     .style("opacity", 0)
     
-    // // Create the text that travels along the curve of chart
-    // var focusText = svg
-    //   .append('g')
-    //   .append('text')
-    //     .style("opacity", 0)
-    //     .attr("text-anchor", "left")
-    //     .attr("alignment-baseline", "middle")
+    // Create the text that travels along the curve of chart
+    var focusText = svg
+      .append('g')
+      .append('text')
+        .style("opacity", 1)
+        .attr("text-anchor", "left")
+        .attr("alignment-baseline", "middle")
+        .html("6018")
+        .attr("x", margin.top)
+        .attr("y", margin.left)
     
     // // Add X axis label:
     // svg.append("text")
