@@ -41,5 +41,7 @@ The environmental impact of agriculture is often underestimated by the layperson
 To start, the graph above shows the overall global trend in emissions for the agricultural industry. In this plot, emissions (y axis) are plotted against year (x axis), where emissions are recorded in kilotons of CO2.
 
 
+<script src="../scripts/slide2_graph.js"></script>
+
 
 [Previous Slide](slide1.md)
