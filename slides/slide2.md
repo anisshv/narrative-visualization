@@ -27,18 +27,10 @@ navigable: false
 <script src="//d3js.org/d3.v4.min.js"></script>
 
 
-# Agricultural Carbon Dioxide Emissions 
+# Agricultural Carbon Dioxide Emissions - by Country
 
 
-The graph you see above, as well as the graphs you will see were constructed using data from the Food and Agriculture Organization (FAO) and the Intergovernmental Panel on Climate Change (IPCC). As you might have guessed, this data describes Carbon Dioxide emissions related to agri-food, which constitutes approximately ~62% of the global annual emissions. Given the agricultural sector's significant contribution to climate change, we can break down which areas tend to produce the most emissions. This breakdown can be examined by country, and by agricultural industry.
-
-
-
-The environmental impact of agriculture is often underestimated by the layperson. Mass media often highlight the impact of consumerism on climate change, but this is usually in context to individual practices (such as recycling or driving a car). As we will see, a significant portion of global emissions is actually controlled by industry - in this case: agriculture. Understanding and addressing the environmental impact of the agri-food industry is crucial for mitigating climate change and developing sustainable practices within this sector.
-
-
-
-To start, the graph above shows the overall global trend in emissions for the agricultural industry. In this plot, emissions (y axis) are plotted against year (x axis), where emissions are recorded in kilotons of CO2.
+As we noted on the previous slide, it may be more interesting to break down the relative differences by country, rather than aggregating them and allowing large countries (such as China or India) to skew the overall quantities of CO2 emissions. In this slide, we open up the visualization to you, to try and find interesting breakdowns and relationships between the different factors across countries. Try to find your country, and think to yourself if the results line up with your expectations!
 
 
 <script src="../scripts/slide2_graph.js"></script>
