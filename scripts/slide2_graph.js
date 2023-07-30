@@ -167,7 +167,7 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     
     //Bars
     svg.selectAll(".bar")
-      .data(data.filter(function(d){return d.Area==allGroup[0]})
+      .data(data.filter(function(d){return d.Area==allGroup[0]}))
       .enter()
       .append("rect")
       .attr("x", x(0) )
