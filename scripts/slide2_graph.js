@@ -132,7 +132,19 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     // Now I can use this dataset:
   function(data) {
 
-    var dataFilter = data.filter(function(d){return d.Area=="Oman"})
+    // List of groups (here I have one group per column)
+    var allGroup = d3.map(data, function(d){return(d.Area)}).keys()
+
+    // add the options to the button
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+      .data(allGroup)
+      .enter()
+      .append('option')
+      .text(function (d) { return d; }) // text showed in the menu
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+    
+    var dataFilter = data.filter(function(d){return d.Area==selectedGroup})
 
     var x = d3.scaleLinear()
       // .domain(d3.extent(data, function(d) { return d.Emissions; }))
@@ -155,7 +167,7 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     
     //Bars
     svg.selectAll(".bar")
-      .data(dataFilter)
+      .data(data.filter(function(d){return d.Area==allGroup[0]})
       .enter()
       .append("rect")
       .attr("x", x(0) )
