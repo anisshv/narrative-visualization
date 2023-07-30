@@ -150,7 +150,7 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
       // .domain(d3.extent(data, function(d) { return d.Emissions; }))
       .domain([0, 7000])
       .range([ 0, width ]);
-    svg.append("g")
+    var xAxis = svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
       .selectAll("text")
@@ -162,7 +162,8 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
       .range([ 0, height ])
       .domain(data.map(function(d) { return d.Type; }))
       .padding(.1);
-    svg.append("g")
+    var yAxis = svg.append("g")
+      .attr("class", "myYaxis")
       .call(d3.axisLeft(y));
     
     //Bars
