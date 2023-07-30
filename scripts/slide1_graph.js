@@ -69,7 +69,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
         .style("opacity", 1)
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle")
-        .html("Waste disposal is the highest at 6018 kT!")
+        .html("Waste disposal is the highest at 6018 kT?")
         .attr("x", margin.top + 200)
         .attr("y", margin.left + 90)
     

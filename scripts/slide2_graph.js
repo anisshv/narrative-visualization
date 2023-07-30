@@ -152,6 +152,7 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
       .range([ 0, width ]);
     var xAxis = svg.append("g")
       .attr("transform", "translate(0," + height + ")")
+      .attr("class","myXaxis")
       .call(d3.axisBottom(x))
       .selectAll("text")
         .attr("transform", "translate(-10,0)rotate(-45)")
@@ -228,7 +229,7 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
 
       // Add X axis
       x.domain([0, d3.max(dataFilter, function(d) { return d.Emissions }) ]);
-      xAxis.transition().duration(1000).call(d3.axisBottom(x))
+      svg.selectAll(".myXaxis").transition().duration(1000).call(d3.axisBottom(x))
         .selectAll("text")
           .attr("transform", "translate(-10,0)rotate(-45)")
           .style("text-anchor", "end");
