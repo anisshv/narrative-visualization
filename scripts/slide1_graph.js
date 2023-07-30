@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
+var margin = {top: 20, right: 30, bottom: 40, left: 90},
     width = 720 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -13,22 +13,26 @@ var svg = d3.select("#d3div")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("data/avg_emissions_by_type.csv",
+d3.csv("../data/avg_emissions_by_type.csv",
 
     // Now I can use this dataset:
   function(data) {
 
     var x = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return d.Year; }))
+      .domain(d3.extent(data, function(d) { return d.Emissions; }))
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end");
 
     // Add Y axis
-    var y = d3.scaleLinear()
-      .domain([10000000, d3.max(data, function(d) { return +d.total_emission; })])
-      .range([ height, 0 ]);
+    var y = d3.scaleBand()
+      .range([ 0, height ])
+      .domain(data.map(function(d) { return d.Type; }))
+      .padding(.1);
     svg.append("g")
       .call(d3.axisLeft(y));
 
@@ -68,15 +72,16 @@ d3.csv("data/avg_emissions_by_type.csv",
     //   .text("Total global emissions")
 
     // Add the line
-    svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 1.5)
-      .attr("d", d3.line()
-        .x(function(d) { return x(d.Year) })
-        .y(function(d) { return y(d.total_emission) })
-        )
+    //Bars
+    svg.selectAll("myRect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", x(0) )
+      .attr("y", function(d) { return y(d.Type); })
+      .attr("width", function(d) { return x(d.Emissions); })
+      .attr("height", y.bandwidth() )
+      .attr("fill", "#69b3a2")
 
     // Create a rect on top of the svg area: this rectangle recovers mouse position
     svg
@@ -101,12 +106,12 @@ d3.csv("data/avg_emissions_by_type.csv",
       var i = bisect(data, x0, 1);
       selectedData = data[i]
       focus
-        .attr("cx", x(selectedData.Year))
-        .attr("cy", y(selectedData.total_emission))
+        .attr("cx", x(selectedData.Emissions))
+        .attr("cy", y(selectedData.Type))
       focusText
-        .html("Year:" + selectedData.Year + "  -  " + "Emissions:" + selectedData.total_emission)
-        .attr("Year", x(selectedData.Year)+150)
-        .attr("Emissions", y(selectedData.total_emission)+150)
+        .html("Year:" + selectedData.Emissions + "  -  " + "Emissions:" + selectedData.Emissions)
+        .attr("Year", x(selectedData.Emissions)+150)
+        .attr("Emissions", y(selectedData.Emissions)+150)
       }
     
     function mouseout() {

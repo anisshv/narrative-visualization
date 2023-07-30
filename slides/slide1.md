@@ -22,8 +22,6 @@ navigable: false
 
 <div id='d3div'></div>
 
-<select id="selectButton"></select>
-
 <script src="//d3js.org/d3.v4.min.js"></script>
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -41,6 +39,9 @@ The environmental impact of agriculture is often underestimated by the layperson
 
 
 To start, the graph above shows the overall global trend in emissions for the agricultural industry. In this plot, emissions (y axis) are plotted against year (x axis), where emissions are recorded in kilotons of CO2.
+
+
+<script src="../scripts/slide1_graph.js"></script>
 
 
 
