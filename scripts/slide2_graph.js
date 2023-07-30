@@ -55,25 +55,36 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     svg.append("g")
       .call(d3.axisLeft(y));
     
-    var bars = svg.selectAll(".bar")
-      .data(data.filter(function(d){return d.Area==allGroup[0]}))
-      .enter()
-      .append("rect")
-      .attr("x", x(0) )
-      // .attr("x", function(d) { return x(d.Emissions); })
-      // .attr("width", x.bandwidth())
-      .attr("y", function(d) { return y(d.Type); })
-      .attr("width", function(d) { return x(d.Emissions); })
-      .attr("height", y.bandwidth() )
-      .attr("fill", "#69b3a2");
+    // var bars = svg.selectAll(".bar")
+    //   .data(data.filter(function(d){return d.Area==allGroup[0]}))
+    //   .enter()
+    //   .append("rect")
+    //   .attr("x", x(0) )
+    //   // .attr("x", function(d) { return x(d.Emissions); })
+    //   // .attr("width", x.bandwidth())
+    //   .attr("y", function(d) { return y(d.Type); })
+    //   .attr("width", function(d) { return x(d.Emissions); })
+    //   .attr("height", y.bandwidth() )
+    //   .attr("fill", "#69b3a2");
 
     // A function that update the chart
-    // function update(selectedGroup) {
+    function update(selectedGroup) {
 
     //   // Create new data with the selection?
-    //   var dataFilter = data.filter(function(d){return d.Area==selectedGroup})
+      var dataFilter = data.filter(function(d){return d.Area==selectedGroup})
 
     //   // Give these new data to update line
+      svg.selectAll(".bar")
+        .data(dataFilter)
+        .enter()
+        .append("rect")
+        .attr("x", x(0) )
+        // .attr("x", function(d) { return x(d.Emissions); })
+        // .attr("width", x.bandwidth())
+        .attr("y", function(d) { return y(d.Type); })
+        .attr("width", function(d) { return x(d.Emissions); })
+        .attr("height", y.bandwidth() )
+        .attr("fill", "#69b3a2");
     //   bars
     //       .enter()
     //       .datum(dataFilter)
@@ -86,15 +97,17 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     //         .attr("width", function(d) { return x(d.Emissions); })
     //         .attr("height", y.bandwidth())
     //         .attr("fill", "#69b3a2")
-    // }
+    }
 
     // // When the button is changed, run the updateChart function
-    // d3.select("#selectButton").on("change", function(d) {
-    //     // recover the option that has been chosen
-    //     var selectedOption = d3.select(this).property("value")
-    //     // run the updateChart function with this selected option
-    //     update(selectedOption)
-    // })
+    d3.select("#selectButton").on("change", function(d) {
+        // recover the option that has been chosen
+        var selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update(selectedOption)
+    })
+
+    update("Afghanistan");
 
 
 })
