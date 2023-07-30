@@ -19,7 +19,8 @@ d3.csv("../data/avg_emissions_by_type.csv",
   function(data) {
 
     var x = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return d.Emissions; }))
+      // .domain(d3.extent(data, function(d) { return d.Emissions; }))
+      .domain([0, 10000])
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -42,6 +43,8 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .enter()
       .append("rect")
       .attr("x", x(0) )
+      // .attr("x", function(d) { return x(d.Emissions); })
+      // .attr("width", x.bandwidth())
       .attr("y", function(d) { return y(d.Type); })
       .attr("width", function(d) { return x(d.Emissions); })
       .attr("height", y.bandwidth() )
