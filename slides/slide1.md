@@ -16,6 +16,8 @@ navigable: false
   stroke-opacity: .6;
 }
 
+.bar { fill: steelblue; }
+
 </style>
 
 

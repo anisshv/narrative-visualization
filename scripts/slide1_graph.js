@@ -37,7 +37,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .call(d3.axisLeft(y));
     
     //Bars
-    svg.selectAll("rect")
+    svg.selectAll(".bar")
       .data(data)
       .enter()
       .append("rect")
