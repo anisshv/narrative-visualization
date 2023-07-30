@@ -216,6 +216,11 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     //       .attr("fill", "#69b3a2");
     // }
 
+    // Coerce values
+    dataFilter.forEach(function(d) {
+      d.Emissions = +d.Emissions;
+    });
+
     // X axis
     y.domain(dataFilter.map(function(d) { return d.Type; }))
     yAxis.transition().duration(1000).call(d3.axisLeft(y))
