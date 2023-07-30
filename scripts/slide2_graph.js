@@ -132,6 +132,8 @@ d3.csv("../data/avg_emissions_by_type.csv",
     // Now I can use this dataset:
   function(data) {
 
+    var dataFilter = data.filter(function(d){return d.Area=="Oman"})
+
     var x = d3.scaleLinear()
       // .domain(d3.extent(data, function(d) { return d.Emissions; }))
       .domain([0, 7000])
@@ -153,7 +155,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
     
     //Bars
     svg.selectAll(".bar")
-      .data(data)
+      .data(dataFilter)
       .enter()
       .append("rect")
       .attr("x", x(0) )
