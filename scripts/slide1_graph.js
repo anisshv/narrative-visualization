@@ -71,7 +71,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
         .attr("alignment-baseline", "middle")
         .html("Waste disposal is the highest at 6018 kT!")
         .attr("x", margin.top + 200)
-        .attr("y", margin.left + 90)
+        .attr("y", margin.left + 85)
     
     // // Add X axis label:
     // svg.append("text")
