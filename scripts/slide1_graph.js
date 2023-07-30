@@ -34,7 +34,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
       .domain(data.map(function(d) { return d.Type; }))
       .padding(.1);
     svg.append("g")
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(y))
 
     // This allows to find the closest X index of the mouse:
     // var bisect = d3.bisector(function(d) { return d.Year; }).left;
@@ -73,7 +73,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
 
     // Add the line
     //Bars
-    svg.selectAll("myRect")
+    svg.selectAll("rect")
       .data(data)
       .enter()
       .append("rect")
