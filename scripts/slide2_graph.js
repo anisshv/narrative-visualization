@@ -138,9 +138,9 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
-      .data(allGroup)
+        .data(allGroup)
       .enter()
-      .append('option')
+        .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
     
