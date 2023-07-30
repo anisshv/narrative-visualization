@@ -20,7 +20,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
 
     var x = d3.scaleLinear()
       // .domain(d3.extent(data, function(d) { return d.Emissions; }))
-      .domain([0, 8000])
+      .domain([0, 7000])
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -71,7 +71,7 @@ d3.csv("../data/avg_emissions_by_type.csv",
         .attr("alignment-baseline", "middle")
         .html("6018")
         .attr("x", margin.top)
-        .attr("y", margin.left)
+        .attr("y", margin.left + 150)
     
     // // Add X axis label:
     // svg.append("text")
