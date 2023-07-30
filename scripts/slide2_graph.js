@@ -215,6 +215,15 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     //       .attr("height", y.bandwidth() )
     //       .attr("fill", "#69b3a2");
     // }
+
+    // X axis
+    y.domain(dataFilter.map(function(d) { return d.Type; }))
+    yAxis.transition().duration(1000).call(d3.axisLeft(y))
+
+    // Add Y axis
+    x.domain([0, d3.max(dataFilter, function(d) { return d.Emissions }) ]);
+    xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
     var u = svg.selectAll("rect")
     .data(dataFilter)
 
