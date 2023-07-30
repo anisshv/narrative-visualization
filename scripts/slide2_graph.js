@@ -201,49 +201,49 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
       // svg.append("g")
       //   .call(d3.axisLeft(y));
 
-    //   // Give these new data to update line
-    //   svg.selectAll(".bar")
-    //     .data(dataFilter)
-    //     .enter()
-    //     .append("rect")
-    //     .merge(".bar")
-    //     .transition()
-    //     .duration(1000)
-    //       .attr("x", x(0) )
-    //       .attr("y", function(d) { return y(d.Type); })
-    //       .attr("width", function(d) { return x(d.Emissions); })
-    //       .attr("height", y.bandwidth() )
-    //       .attr("fill", "#69b3a2");
-    // }
+      //   // Give these new data to update line
+      //   svg.selectAll(".bar")
+      //     .data(dataFilter)
+      //     .enter()
+      //     .append("rect")
+      //     .merge(".bar")
+      //     .transition()
+      //     .duration(1000)
+      //       .attr("x", x(0) )
+      //       .attr("y", function(d) { return y(d.Type); })
+      //       .attr("width", function(d) { return x(d.Emissions); })
+      //       .attr("height", y.bandwidth() )
+      //       .attr("fill", "#69b3a2");
+      // }
 
-    // Coerce values
-    dataFilter.forEach(function(d) {
-      d.Emissions = +d.Emissions;
-    });
+      // Coerce values
+      dataFilter.forEach(function(d) {
+        d.Emissions = +d.Emissions;
+      });
 
-    // X axis
-    y.domain(dataFilter.map(function(d) { return d.Type; }))
-    yAxis.transition().duration(1000).call(d3.axisLeft(y))
+      // X axis
+      y.domain(dataFilter.map(function(d) { return d.Type; }))
+      yAxis.transition().duration(1000).call(d3.axisLeft(y))
 
-    // Add Y axis
-    x.domain([0, d3.max(dataFilter, function(d) { return d.Emissions }) ]);
-    xAxis.transition().duration(1000).call(d3.axisBottom(x));
+      // Add Y axis
+      x.domain([0, d3.max(dataFilter, function(d) { return d.Emissions }) ]);
+      xAxis.transition().duration(1000).call(d3.axisBottom(x));
 
-    var u = svg.selectAll("rect")
-    .data(dataFilter)
+      var u = svg.selectAll("rect")
+      .data(dataFilter)
 
-    u
-      // .data(dataFilter)
-      .enter()
-      .append('rect')
-      .merge(u)
-      .transition()
-      .duration(1000)
-        .attr("x", function(d) { return x(0); })
-        .attr("y", function(d) { return y(d.Type); })
-        .attr("width", function(d) { return x(d.Emissions); })
-        .attr("height", y.bandwidth())
-        .attr("fill", "#69b3a2")
+      u
+        // .data(dataFilter)
+        .enter()
+        .append('rect')
+        .merge(u)
+        .transition()
+        .duration(1000)
+          .attr("x", function(d) { return x(0); })
+          .attr("y", function(d) { return y(d.Type); })
+          .attr("width", function(d) { return x(d.Emissions); })
+          .attr("height", y.bandwidth())
+          .attr("fill", "#69b3a2")
     }
 
     // update bars
