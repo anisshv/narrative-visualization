@@ -102,12 +102,12 @@ d3.csv("../data/avg_emissions_by_country_long.csv",
     // // When the button is changed, run the updateChart function
     d3.select("#selectButton").on("change", function(d) {
         // recover the option that has been chosen
-        var selectedOption = d3.select(this).property("value")
+        var selectedOption = d3.select(this).property("value");
         // run the updateChart function with this selected option
-        update(selectedOption)
+        update(selectedOption);
     })
 
-    update("Afghanistan");
+    update("Oman");
 
 
 })
